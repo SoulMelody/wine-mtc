@@ -937,6 +937,11 @@ static DWORD modData(WORD wDevID, DWORD dwParam)
 		    }
 		    break;
 		case 0x01:	/* MTC Quarter frame */
+            {
+            event.type = SND_SEQ_EVENT_QFRAME;
+            event.data.control.value = d1;
+            }
+                break;
 		case 0x03:	/* Song Select. */
 		    {
 			BYTE buf[2];
